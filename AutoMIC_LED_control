@@ -1,0 +1,26 @@
+void setup() 
+{
+  pinMode(A0,INPUT);
+  pinMode(13,OUTPUT);
+  pinMode(10,OUTPUT);
+  pinMode(5,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() 
+{
+  analogRead(A0);
+  Serial.println(analogRead(A0));
+  if((analogRead(A0) > 80)== true)
+  {
+  digitalWrite(13,HIGH);
+  }
+  else if((analogRead(A0) > 90) == true){
+    digitalWrite(10,HIGH);}
+  else if((analogRead(A0) > 110) == true){
+    digitalWrite(5,HIGH);}
+  else{  
+  digitalWrite(5,LOW);
+  digitalWrite(13,LOW);
+  digitalWrite(10,LOW);}
+}
